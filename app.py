@@ -12,7 +12,7 @@ LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
 line_bot_api=LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler=WebhookHandler(LINE_CHANNEL_SECRET)
 
-@app.route("/bot/webhook",methods=["POST"])
+@app.route("/callback",methods=["POST"])
 def callback():
     signature=request.headers["X-Line-Signature"]
 
