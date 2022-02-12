@@ -35,7 +35,7 @@ def handle_message(event):
 
 def talkapi_response(text):
     Talk_api = "https://api.a3rt.recruit.co.jp/talk/v1/smalltalk"
-    apikey = os.enciron["TALK_API_KEY"]
+    apikey = os.environ["TALK_API_KEY"]
     data = {"apikey": apikey, "query": text}
     response = requests.post(Talk_api, data = data)
     return response.json()['results'][0]['reply']
