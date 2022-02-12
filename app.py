@@ -28,11 +28,11 @@ def callback():
 
 @handler.add(MessageEvent,message=TextMessage)
 def handle_message(event):
-    receive_text = event.message.text
+    rec_text = event.message.text
 
-    reply_text = talkapi_response(recieve_text)
+    rep_text = talkapi_response(rec_text)
 
-    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
+    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=rep_text))
 
 def talkapi_response(text):
     apikey = "DZZwfFfsz0009pdhB8SDfw3P1luSANim"
